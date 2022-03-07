@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<motor id="DF45L024048-A2" label="DF45L024048-A2" img="" description="DF45L024048-A2 Brushless DC Motor" byuser="true">
+  <Mp>
+    <user_data>
+      <motors>
+        <pole_pairs>8</pole_pairs>
+        <max_speed>6100</max_speed>
+        <max_current>3.16</max_current>
+        <v_bus>24</v_bus>
+        <ld_lq_ratio>1</ld_lq_ratio>
+        <sm_pmsm>true</sm_pmsm>
+        <i_pmsm>false</i_pmsm>
+      </motors>
+    </user_data>
+    <profile_data>
+      <motors>
+        <electrical>
+          <max_current>3.16</max_current>
+          <v_bus>24</v_bus>
+          <ls>0.27</ls>
+          <rs>0.64</rs>
+          <ke>0.1</ke>
+        </electrical>
+        <mechanical>
+          <friction>0.557</friction>
+          <inertia>18.1</inertia>
+          <max_speed>6100</max_speed>
+        </mechanical>
+      </motors>
+      <operation_condition>
+        <pwm_frequency>14000</pwm_frequency>
+        <foc_rate>1</foc_rate>
+        <cutoff_frequency>3000</cutoff_frequency>
+      </operation_condition>
+    </profile_data>
+  </Mp>
+  <system type="motor 1">
+    <motor version="1.0">
+      <name>Motor</name>
+      <uid>M</uid>
+      <type>M</type>
+      <handler_name>M</handler_name>
+      <board_name>DF45L024048-A2</board_name>
+      <vars>
+        <var version="1.0" type="MC_List" name="I/SM-PMSM" value="1">
+          <items>
+            <item tag="1" text="Internal PMSM"/>
+            <item tag="0" text="Surface Mounted PMSM"/>
+          </items>
+        </var>
+        <var version="1.0" type="MC_Int" name="Pole Pairs" value="8"/>
+        <var version="1.0" type="MC_Int" name="Max Rated Speed" value="6100"/>
+        <var version="1.0" type="MC_Double" name="Nominal Current" value="3.26"/>
+        <var version="1.0" type="MC_Double" name="Nominal DC Voltage" value="24"/>
+        <var version="1.0" type="MC_Double" name="Rs" value="0.64"/>
+        <var version="1.0" type="MC_Double" name="Ld" value="0.27"/>
+        <var version="1.0" type="MC_Double" name="Lq" value="0.27"/>
+        <var version="1.0" type="MC_Double" name="Ls" value="0.27"/>
+        <var version="1.0" type="MC_Double" name="ld_lq_ratio" value="1"/>
+        <var version="1.0" type="MC_Double" name="B-EmfConstant" value="0.1"/>
+        <var version="1.0" type="MC_Double" name="inertia" value="18.1"/>
+        <var version="1.0" type="MC_Double" name="friction" value="0.557"/>
+        <var version="1.0" type="MC_Bool" name="Hall sensors" value="true"/>
+        <var version="1.0" type="MC_List" name="Sensors displacement" value="1">
+          <items>
+            <item tag="60" text="60"/>
+            <item tag="120" text="120"/>
+          </items>
+        </var>
+        <var version="1.0" type="MC_Int" name="Placement electrical angle" value="270"/>
+        <var version="1.0" type="MC_Bool" name="Quadrature encoder" value="false"/>
+        <var version="1.0" type="MC_Int" name="Pulses per mechanical revolution" value="400"/>
+      </vars>
+    </motor>
+  </system>
+</motor>
