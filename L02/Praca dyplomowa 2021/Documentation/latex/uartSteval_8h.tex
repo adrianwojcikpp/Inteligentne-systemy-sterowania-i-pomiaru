@@ -1,0 +1,200 @@
+\hypertarget{uartSteval_8h}{}\section{uart\+Steval.\+h File Reference}
+\label{uartSteval_8h}\index{uart\+Steval.\+h@{uart\+Steval.\+h}}
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include \char`\"{}registers.\+h\char`\"{}}\newline
+Include dependency graph for uart\+Steval.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structUART}{U\+A\+RT}
+\begin{DoxyCompactList}\small\item\em Uart connection object. \end{DoxyCompactList}\item 
+struct \hyperlink{structFrame}{Frame}
+\begin{DoxyCompactList}\small\item\em Uart frame obejct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{uartSteval_8h_a68de9030c39965958f08402f7d452ad9}\label{uartSteval_8h_a68de9030c39965958f08402f7d452ad9}} 
+\#define {\bfseries N\+O\+\_\+\+D\+A\+TA}~I\+N\+T\+\_\+\+M\+AX
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} \hyperlink{uartSteval_8h_a235ee66475c7708c3631c0565576b12c}{receive} (\hyperlink{structFrame}{Frame} $\ast$cmd, int connection)
+\begin{DoxyCompactList}\small\item\em Receive uart frame. \end{DoxyCompactList}\item 
+\hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} \hyperlink{uartSteval_8h_af44f747f666f203f8b967dc33d4de3bd}{send} (\hyperlink{structFrame}{Frame} cmd, \hyperlink{structUART}{U\+A\+RT} uart, bool cmd\+\_\+show=false)
+\begin{DoxyCompactList}\small\item\em Send data in frame. \end{DoxyCompactList}\item 
+\hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} \hyperlink{uartSteval_8h_a79b5a76a5868e5476e5b155397dd6ff8}{Start\+Motor} (int motor\+Id, \hyperlink{structUART}{U\+A\+RT} uart)
+\begin{DoxyCompactList}\small\item\em Execute start motor command. \end{DoxyCompactList}\item 
+\hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} \hyperlink{uartSteval_8h_a155023e2c3ea0d3b9e134bde16d66188}{Stop\+Motor} (int motor\+Id, \hyperlink{structUART}{U\+A\+RT} uart)
+\begin{DoxyCompactList}\small\item\em Execute stop motor command. \end{DoxyCompactList}\item 
+\hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} \hyperlink{uartSteval_8h_a80d0d20ff6a0bf5ea6ad269225233ef5}{Set\+Motor\+Ref\+Speed} (int ref, int motor\+Id, \hyperlink{structUART}{U\+A\+RT} uart)
+\begin{DoxyCompactList}\small\item\em Set the motor ramp final speed registry. \end{DoxyCompactList}\item 
+\hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} \hyperlink{uartSteval_8h_aeadcac47ee58b866ab13e67564e26c7a}{Set\+Registry} (\hyperlink{registers_8h_a1a02f5486dc2072d20b8c0efc8d66780}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS} reg, \hyperlink{registers_8h_a420772e8eb2fd0b2ef06da094afb6f59}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+L\+EN} regL, int motor\+Id, \hyperlink{structUART}{U\+A\+RT} uart, int data)
+\begin{DoxyCompactList}\small\item\em Set the registry value. \end{DoxyCompactList}\item 
+\hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} \hyperlink{uartSteval_8h_a81f7358c74701176b16336cf4755a5c8}{Get\+Registry} (\hyperlink{registers_8h_a1a02f5486dc2072d20b8c0efc8d66780}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS} reg, \hyperlink{registers_8h_a420772e8eb2fd0b2ef06da094afb6f59}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+L\+EN} regL, int motor\+Id, \hyperlink{structUART}{U\+A\+RT} uart)
+\begin{DoxyCompactList}\small\item\em Get the registry value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Created on\+: Nov 27, 2020 Author\+: walko 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{uartSteval_8h_a81f7358c74701176b16336cf4755a5c8}\label{uartSteval_8h_a81f7358c74701176b16336cf4755a5c8}} 
+\index{uart\+Steval.\+h@{uart\+Steval.\+h}!Get\+Registry@{Get\+Registry}}
+\index{Get\+Registry@{Get\+Registry}!uart\+Steval.\+h@{uart\+Steval.\+h}}
+\subsubsection{\texorpdfstring{Get\+Registry()}{GetRegistry()}}
+{\footnotesize\ttfamily \hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} Get\+Registry (\begin{DoxyParamCaption}\item[{\hyperlink{registers_8h_a1a02f5486dc2072d20b8c0efc8d66780}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}]{reg,  }\item[{\hyperlink{registers_8h_a420772e8eb2fd0b2ef06da094afb6f59}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+L\+EN}}]{regL,  }\item[{int}]{motor\+Id,  }\item[{\hyperlink{structUART}{U\+A\+RT}}]{uart }\end{DoxyParamCaption})}
+
+
+
+Get the registry value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Motor control register id \\
+\hline
+{\em regL} & Montrol register payload length \\
+\hline
+{\em motor\+Id} & Motor id \\
+\hline
+{\em uart} & Uart object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US Getting resoult 
+\end{DoxyReturn}
+\mbox{\Hypertarget{uartSteval_8h_a235ee66475c7708c3631c0565576b12c}\label{uartSteval_8h_a235ee66475c7708c3631c0565576b12c}} 
+\index{uart\+Steval.\+h@{uart\+Steval.\+h}!receive@{receive}}
+\index{receive@{receive}!uart\+Steval.\+h@{uart\+Steval.\+h}}
+\subsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily \hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} receive (\begin{DoxyParamCaption}\item[{\hyperlink{structFrame}{Frame} $\ast$}]{cmd,  }\item[{int}]{connection }\end{DoxyParamCaption})}
+
+
+
+Receive uart frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Received frame \\
+\hline
+{\em connection} & Uart connection id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US Receiving status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{uartSteval_8h_af44f747f666f203f8b967dc33d4de3bd}\label{uartSteval_8h_af44f747f666f203f8b967dc33d4de3bd}} 
+\index{uart\+Steval.\+h@{uart\+Steval.\+h}!send@{send}}
+\index{send@{send}!uart\+Steval.\+h@{uart\+Steval.\+h}}
+\subsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily \hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} send (\begin{DoxyParamCaption}\item[{\hyperlink{structFrame}{Frame}}]{cmd,  }\item[{\hyperlink{structUART}{U\+A\+RT}}]{uart,  }\item[{bool}]{cmd\+\_\+show = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Send data in frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em con} & Uart conneciton id \\
+\hline
+{\em data} & Data to send \\
+\hline
+{\em l} & Control register payload length \\
+\hline
+{\em cmd\+\_\+show} & Optional param, if true show sending fame in console \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US Sending resoult 
+\end{DoxyReturn}
+\mbox{\Hypertarget{uartSteval_8h_a80d0d20ff6a0bf5ea6ad269225233ef5}\label{uartSteval_8h_a80d0d20ff6a0bf5ea6ad269225233ef5}} 
+\index{uart\+Steval.\+h@{uart\+Steval.\+h}!Set\+Motor\+Ref\+Speed@{Set\+Motor\+Ref\+Speed}}
+\index{Set\+Motor\+Ref\+Speed@{Set\+Motor\+Ref\+Speed}!uart\+Steval.\+h@{uart\+Steval.\+h}}
+\subsubsection{\texorpdfstring{Set\+Motor\+Ref\+Speed()}{SetMotorRefSpeed()}}
+{\footnotesize\ttfamily \hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} Set\+Motor\+Ref\+Speed (\begin{DoxyParamCaption}\item[{int}]{ref,  }\item[{int}]{motor\+Id,  }\item[{\hyperlink{structUART}{U\+A\+RT}}]{uart }\end{DoxyParamCaption})}
+
+
+
+Set the motor ramp final speed registry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref} & Value to set \\
+\hline
+{\em motor\+Id} & Motor id \\
+\hline
+{\em uart} & Uart object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US Setting resoult 
+\end{DoxyReturn}
+\mbox{\Hypertarget{uartSteval_8h_aeadcac47ee58b866ab13e67564e26c7a}\label{uartSteval_8h_aeadcac47ee58b866ab13e67564e26c7a}} 
+\index{uart\+Steval.\+h@{uart\+Steval.\+h}!Set\+Registry@{Set\+Registry}}
+\index{Set\+Registry@{Set\+Registry}!uart\+Steval.\+h@{uart\+Steval.\+h}}
+\subsubsection{\texorpdfstring{Set\+Registry()}{SetRegistry()}}
+{\footnotesize\ttfamily \hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} Set\+Registry (\begin{DoxyParamCaption}\item[{\hyperlink{registers_8h_a1a02f5486dc2072d20b8c0efc8d66780}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}]{reg,  }\item[{\hyperlink{registers_8h_a420772e8eb2fd0b2ef06da094afb6f59}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+L\+EN}}]{regL,  }\item[{int}]{motor\+Id,  }\item[{\hyperlink{structUART}{U\+A\+RT}}]{uart,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+Set the registry value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Motor control register id \\
+\hline
+{\em regL} & Montrol register payload length \\
+\hline
+{\em motor\+Id} & Motor id \\
+\hline
+{\em uart} & Uart object \\
+\hline
+{\em data} & Value to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US Setting resoult 
+\end{DoxyReturn}
+\mbox{\Hypertarget{uartSteval_8h_a79b5a76a5868e5476e5b155397dd6ff8}\label{uartSteval_8h_a79b5a76a5868e5476e5b155397dd6ff8}} 
+\index{uart\+Steval.\+h@{uart\+Steval.\+h}!Start\+Motor@{Start\+Motor}}
+\index{Start\+Motor@{Start\+Motor}!uart\+Steval.\+h@{uart\+Steval.\+h}}
+\subsubsection{\texorpdfstring{Start\+Motor()}{StartMotor()}}
+{\footnotesize\ttfamily \hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} Start\+Motor (\begin{DoxyParamCaption}\item[{int}]{motor\+Id,  }\item[{\hyperlink{structUART}{U\+A\+RT}}]{uart }\end{DoxyParamCaption})}
+
+
+
+Execute start motor command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+Id} & Motor id \\
+\hline
+{\em uart} & Uart object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US Starting motor resoult 
+\end{DoxyReturn}
+\mbox{\Hypertarget{uartSteval_8h_a155023e2c3ea0d3b9e134bde16d66188}\label{uartSteval_8h_a155023e2c3ea0d3b9e134bde16d66188}} 
+\index{uart\+Steval.\+h@{uart\+Steval.\+h}!Stop\+Motor@{Stop\+Motor}}
+\index{Stop\+Motor@{Stop\+Motor}!uart\+Steval.\+h@{uart\+Steval.\+h}}
+\subsubsection{\texorpdfstring{Stop\+Motor()}{StopMotor()}}
+{\footnotesize\ttfamily \hyperlink{registers_8h_a0528dc4401f43d2c1ce20479a635c327}{U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US} Stop\+Motor (\begin{DoxyParamCaption}\item[{int}]{motor\+Id,  }\item[{\hyperlink{structUART}{U\+A\+RT}}]{uart }\end{DoxyParamCaption})}
+
+
+
+Execute stop motor command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+Id} & Motor id \\
+\hline
+{\em uart} & Uart object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+A\+R\+T\+\_\+\+S\+T\+A\+T\+US Stoping motor resoult 
+\end{DoxyReturn}

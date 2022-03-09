@@ -1,0 +1,16 @@
+[Unit]
+Description=Screwspin server service
+After=network.target
+
+[Service]
+ExecStart= /home/pi/Inzynier/uart/serverUDP
+WorkingDirectory=/home/pi/Inzynier/uart
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+RestartSec=10s
+User=pi
+
+
+[Install]
+WantedBy=multi-user.target

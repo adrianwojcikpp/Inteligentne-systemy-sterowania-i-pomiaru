@@ -1,0 +1,114 @@
+\hypertarget{structFrame}{}\section{Frame Struct Reference}
+\label{structFrame}\index{Frame@{Frame}}
+
+
+Uart frame obejct.  
+
+
+
+
+{\ttfamily \#include $<$uart\+Steval.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structFrame_ad2e5946cf41d4817e750500acf05d02b}\label{structFrame_ad2e5946cf41d4817e750500acf05d02b}} 
+\hyperlink{structFrame_ad2e5946cf41d4817e750500acf05d02b}{Frame} ()
+\begin{DoxyCompactList}\small\item\em Default construct a new \hyperlink{structFrame}{Frame} object. \end{DoxyCompactList}\item 
+\hyperlink{structFrame_aa3e7c6b3f70eb267395ec98251914bd0}{Frame} (int motorid, \hyperlink{registers_8h_a9360bf1cda059a1f526e614bdc708067}{F\+R\+A\+M\+E\+\_\+\+C\+O\+D\+ES} framecode, \hyperlink{registers_8h_a1a02f5486dc2072d20b8c0efc8d66780}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS} register\+Id, \hyperlink{registers_8h_a420772e8eb2fd0b2ef06da094afb6f59}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+L\+EN} payload\+\_\+len, int data)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{structFrame}{Frame} object. \end{DoxyCompactList}\item 
+int \hyperlink{structFrame_aebb6a947cb2f14b6eaf79fcda9c36cdc}{get\+Commad} ()
+\begin{DoxyCompactList}\small\item\em Get the Commad object as int. \end{DoxyCompactList}\item 
+int \hyperlink{structFrame_ac2ac164080c777c32ed8e9e69686f73b}{reverse} (int b, int l)
+\begin{DoxyCompactList}\small\item\em Bitwise inversion of a number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structFrame_a5ed5915a665d730ae48197fcc13ed6e2}\label{structFrame_a5ed5915a665d730ae48197fcc13ed6e2}} 
+int {\bfseries motor\+Id}
+\item 
+\mbox{\Hypertarget{structFrame_a7df21ac765f283dbbdeff0f6b138dbbf}\label{structFrame_a7df21ac765f283dbbdeff0f6b138dbbf}} 
+\hyperlink{registers_8h_a9360bf1cda059a1f526e614bdc708067}{F\+R\+A\+M\+E\+\_\+\+C\+O\+D\+ES} {\bfseries frame\+Code}
+\item 
+\mbox{\Hypertarget{structFrame_afdea1e81b961af0a76c77feb1b1f6c62}\label{structFrame_afdea1e81b961af0a76c77feb1b1f6c62}} 
+\hyperlink{registers_8h_a1a02f5486dc2072d20b8c0efc8d66780}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS} {\bfseries reg}
+\item 
+\mbox{\Hypertarget{structFrame_abc8ea8dca964e65eb2ff5576d4ea292b}\label{structFrame_abc8ea8dca964e65eb2ff5576d4ea292b}} 
+\hyperlink{registers_8h_a420772e8eb2fd0b2ef06da094afb6f59}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+L\+EN} {\bfseries reg\+Len}
+\item 
+\mbox{\Hypertarget{structFrame_a3a7eb2fd235695c3dbacea750f78fc97}\label{structFrame_a3a7eb2fd235695c3dbacea750f78fc97}} 
+int {\bfseries data}
+\item 
+\mbox{\Hypertarget{structFrame_a7111131da675b6ef44494c1a221b8337}\label{structFrame_a7111131da675b6ef44494c1a221b8337}} 
+int {\bfseries C\+RC}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Uart frame obejct. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structFrame_aa3e7c6b3f70eb267395ec98251914bd0}\label{structFrame_aa3e7c6b3f70eb267395ec98251914bd0}} 
+\index{Frame@{Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{Frame()}{Frame()}}
+{\footnotesize\ttfamily Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{int}]{motorid,  }\item[{\hyperlink{registers_8h_a9360bf1cda059a1f526e614bdc708067}{F\+R\+A\+M\+E\+\_\+\+C\+O\+D\+ES}}]{framecode,  }\item[{\hyperlink{registers_8h_a1a02f5486dc2072d20b8c0efc8d66780}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}]{register\+Id,  }\item[{\hyperlink{registers_8h_a420772e8eb2fd0b2ef06da094afb6f59}{S\+T\+E\+V\+A\+L\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+L\+EN}}]{payload\+\_\+len,  }\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{structFrame}{Frame} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motorid} & Motor id \\
+\hline
+{\em framecode} & \hyperlink{structFrame}{Frame} code from F\+R\+A\+M\+E\+\_\+\+C\+O\+D\+ES enum \\
+\hline
+{\em register\+Id} & Motor control register id \\
+\hline
+{\em payload\+\_\+len} & Motor control register payload length \\
+\hline
+{\em data} & Data to send, if no data put N\+O\+\_\+\+D\+A\+TA \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structFrame_aebb6a947cb2f14b6eaf79fcda9c36cdc}\label{structFrame_aebb6a947cb2f14b6eaf79fcda9c36cdc}} 
+\index{Frame@{Frame}!get\+Commad@{get\+Commad}}
+\index{get\+Commad@{get\+Commad}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{get\+Commad()}{getCommad()}}
+{\footnotesize\ttfamily int Frame\+::get\+Commad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Commad object as int. 
+
+\begin{DoxyReturn}{Returns}
+int Command as single int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structFrame_ac2ac164080c777c32ed8e9e69686f73b}\label{structFrame_ac2ac164080c777c32ed8e9e69686f73b}} 
+\index{Frame@{Frame}!reverse@{reverse}}
+\index{reverse@{reverse}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily int Frame\+::reverse (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bitwise inversion of a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & int number to reverse \\
+\hline
+{\em l} & Bitwise lenght of number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int inverst number 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{uartSteval_8h}{uart\+Steval.\+h}\end{DoxyCompactItemize}
