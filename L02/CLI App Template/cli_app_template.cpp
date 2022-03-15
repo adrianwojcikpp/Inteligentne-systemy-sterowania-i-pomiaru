@@ -11,7 +11,7 @@
   
 /* Includes ------------------------------------------------------------------*/
 #include <iostream>
-#include "getopt.h"
+#include <getopt.h>
 
 /* Define --------------------------------------------------------------------*/
 
@@ -74,6 +74,7 @@ void parse_args(int argc, char* argv[], options* op)
       {
         std::cout << "Usage: app [options]" << std::endl
                   << "Options:" << std::endl
+                  << "-h            Display help message." << std::endl
                   << "-a            [TODO]" << std::endl
                   << "-b            [TODO]" << std::endl
                   << "-c <numeric>  [TODO]" << std::endl;
