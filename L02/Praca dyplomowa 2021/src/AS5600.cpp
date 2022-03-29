@@ -81,8 +81,8 @@ AS5600_STATUS writeTwoByte(uint16_t in_adr, uint16_t dat_in) {
 * @return AS5600 status
 *******************************************************/
 AS5600_STATUS AS5600_Init(int *fd) {
-	*fd,as5600 = wiringPiI2CSetup(AS5600_ADDRESS);
-    //as5600= *fd;
+    *fd = wiringPiI2CSetup(AS5600_ADDRESS);
+    as5600 = *fd;
     return AS5600_OK;
 }
 /*******************************************************
