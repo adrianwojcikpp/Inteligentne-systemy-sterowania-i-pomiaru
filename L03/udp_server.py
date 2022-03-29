@@ -1,40 +1,32 @@
 #!/usr/bin/python
+#*
+#******************************************************************************
+#* @file    udp_server.py
+#* @author  AW           Adrian.Wojcik@put.poznan.pl
+#* @version 1.0
+#* @date    29-Mar-2022
+#* @brief   Simple UDP server with main loop
+#* 
+#******************************************************************************
+#*
 import socket
 
- 
+localIP    = "192.168.0.18"
+localPort  = 20000
+bufferSize = 1024
 
-localIP     = "10.0.2.15"
-
-localPort   = 20001
-
-bufferSize  = 1024
-
- 
-
-msgFromServer       = "Hello UDP Client"
-
-bytesToSend         = str.encode(msgFromServer)
-
- 
+msgFromServer = "Hello from [Python] server"
+bytesToSend   = str.encode(msgFromServer)
 
 # Create a datagram socket
-
 UDPServerSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
- 
-
 # Bind to address and ip
-
 UDPServerSocket.bind((localIP, localPort))
 
- 
+print("[Python] UDP server up and listening.")
 
-print("UDP server up and listening")
-
- 
-#!/usr/bin/env python3
 # Listen for incoming datagrams
-
 while(True):
 
     bytesAddressPair = UDPServerSocket.recvfrom(bufferSize)
@@ -43,12 +35,12 @@ while(True):
 
     address = bytesAddressPair[1]
 
-    clientMsg = "Message from Client:{}".format(message)
+    clientMsg = "Client message: {}".format(message)
     clientIP  = "Client IP Address:{}".format(address)
     
     print(clientMsg)
-    print(clientIP)
+    #print(clientIP)
 
     # Sending a reply to client
-
     UDPServerSocket.sendto(bytesToSend, address)
+    print("Response sent.")

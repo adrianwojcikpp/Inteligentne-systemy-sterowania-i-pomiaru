@@ -1,27 +1,30 @@
 #!/usr/bin/python3
+#*
+#******************************************************************************
+#* @file    udp_client.py
+#* @author  AW           Adrian.Wojcik@put.poznan.pl
+#* @version 1.0
+#* @date    29-Mar-2022
+#* @brief   Simple UDP client
+#* 
+#******************************************************************************
+#*
 import socket
 
- 
-
-msgFromClient       = "Hello UDP Server"
-
+msgFromClient       = "Hello from [Python] client"
 bytesToSend         = str.encode(msgFromClient)
-
-serverAddressPort   = ("10.0.2.15", 20001)
-
+serverAddressPort   = ("192.168.0.18", 20000)   # C / Python server [RPi]
+#serverAddressPort   = ("192.168.0.15", 20000)  # MATLAB server [PC]
 bufferSize          = 1024
 
- 
 # Create a UDP socket at client side
-
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 # Send to server using created UDP socket
-
 UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+print("Message sent.")
 
 msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 
-msg = "Message from Server {}".format(msgFromServer[0])
-
+msg = "Server response: {}".format(msgFromServer[0])
 print(msg)
