@@ -12,8 +12,8 @@
 %
 % ************************************************************************
 
-%server_ip = '192.168.0.15'; % MATLAB server [PC]
-server_ip = '192.168.0.18'; % C / Python server [RPi]
+%server_ip = '192.168.1.181'; % MATLAB server [PC]
+server_ip = '192.168.1.224'; % C / Python server [RPi]
 server_port = 20000;
 
 udp_client_port = udpport("datagram","IPV4");
