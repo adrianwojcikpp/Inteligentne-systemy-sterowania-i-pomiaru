@@ -6,7 +6,8 @@ function clientCallback(u, ~)
     data = char(datagram.Data);
     
     % Prepare the acknowledgement string.
-    dataDisp = "Server response: " + data;
+    time = datestr(now, 'HH:MM:SS.FFF');
+    dataDisp = "Server response [" + time + "]: " + data;
     
     disp(dataDisp);
 end
