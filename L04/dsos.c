@@ -19,7 +19,7 @@
  * @param[out] sys    : Second order system structure
  * @param[in]  coeffs : Raw coefficients 
  */
- void dsos_init(struct dsos* sys, double* coeffs)
+ void DSOS_Init(DSOS_HandleTypeDef* sys, double* coeffs)
  {
 	sys->a1 = coeffs[0]; 
 	sys->a2 = coeffs[1];
@@ -34,7 +34,7 @@
  * @param[in]     u   : Input signal sample
  * @return System response 
  */
-double lsim_step(struct dsos* sys, double u)
+double DSOS_GetOutput(DSOS_HandleTypeDef* sys, double u)
 {
 	double y = sys->a1*sys->y_prev[0] + sys->a2*sys->y_prev[1] + sys->b0*u + sys->b1*sys->u_prev[0] + sys->b2*sys->u_prev[1];
 	sys->y_prev[1] = sys->y_prev[0];

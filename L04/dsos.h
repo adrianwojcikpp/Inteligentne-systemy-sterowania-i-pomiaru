@@ -11,11 +11,11 @@
   */
   
 /* Typedef -------------------------------------------------------------------*/
-struct dsos {
+typedef struct {
 	double a1, a2, b0, b1, b2;
 	double u_prev[2];
 	double y_prev[2];
-};
+} DSOS_HandleTypeDef;
 
 /* Public function -----------------------------------------------------------*/
 /**
@@ -23,7 +23,7 @@ struct dsos {
  * @param[out] sys    : Second order system structure
  * @param[in]  coeffs : Raw coefficients 
  */
- void dsos_init(struct dsos* sys, double* coeffs);
+ void DSOS_Init(DSOS_HandleTypeDef* sys, double* coeffs);
  
 /**
  * @brief Single-step second order system simulation
@@ -31,4 +31,4 @@ struct dsos {
  * @param[in]     u   : Input signal sample
  * @return System response 
  */
-double lsim_step(struct dsos* sys, double u);
+double DSOS_GetOutput(DSOS_HandleTypeDef* sys, double u);

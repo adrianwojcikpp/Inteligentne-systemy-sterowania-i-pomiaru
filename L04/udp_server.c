@@ -33,7 +33,7 @@ int nanosleep(const struct timespec *req, struct timespec *rem);
 #define SAMPLE_TIME 50 // [ms]
 
 /* Public variables ----------------------------------------------------------*/
-struct dsos sys;
+DSOS_HandleTypeDef sys;
 double u = 0.0, y = 0.0;
 
 int sockfd;
@@ -77,7 +77,7 @@ void* control_loop(void* arg)
 	uint64_t iteration = 0;
 	while(1)
 	{
-		y = lsim_step(&sys, u);
+		y = DSOS_GetOutput(&sys, u);
     	delay_ms(SAMPLE_TIME);
 
 		if(iteration % 10 == 0)
@@ -139,7 +139,7 @@ int main(int argc, char* argv[])
 							0x3ED4A20EABF99825
 						};	
 
-	dsos_init(&sys, (double*)coeffs);
+	DSOS_Init(&sys, (double*)coeffs);
 
     // Create a new thread
 	pthread_t ptid;

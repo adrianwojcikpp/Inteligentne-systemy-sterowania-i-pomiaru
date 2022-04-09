@@ -37,12 +37,12 @@ int main()
 	
 	const int n = 10000;
 	double y[n];
-	struct dsos obj1;
-	dsos_init(&obj1, (double*)coeffs);
+	DSOS_HandleTypeDef obj1;
+	DSOS_Init(&obj1, (double*)coeffs);
 	
 	// Perform step-by-step simulation
 	for(int i = 0; i < n; i++)
-		y[i] = lsim_step(&obj1, 1.0); // Step response
+		y[i] = DSOS_GetOutput(&obj1, 1.0); // Step response
 	
 	// Log data to file
 	save_data_to_file("y.csv", y, n);
