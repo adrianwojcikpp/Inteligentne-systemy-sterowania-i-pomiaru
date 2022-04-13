@@ -13,14 +13,16 @@
 % ************************************************************************
 
 %server_ip = '192.168.1.181'; % MATLAB server [PC]
-server_ip = '192.168.0.32'; % C / Python server [RPi]
-server_port = 20000;
+server_ip = '192.168.1.224'; % C / Python server [RPi]
+server_port = 20001;
 
 udp_client_port = udpport("datagram","IPV4");
 
-udp_send = @(data)( write(udp_client_port, char(data), server_ip, server_port) );
+udp_send = @(data)( write(udp_client_port, char(num2str(data)), server_ip, server_port) );
 
 udp_send(1);
+
+iteration = 0;
 
 while 1
 
@@ -37,6 +39,17 @@ while 1
         dataDisp = "Server response [" + time + "]: " + data;
         
         disp(dataDisp);
+
+        iteration = iteration + 1;
+
+        if iteration == 10
+            udp_send(-1);
+        end
+    
+        if iteration == 20
+            udp_send(1);
+            iteration = 0;
+        end
 
     end
 
