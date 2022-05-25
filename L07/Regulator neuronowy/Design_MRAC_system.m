@@ -15,6 +15,10 @@
 %
 clear all; close all; clc;
 
+%% System sample time
+
+Ts = 1; % [s]
+
 %% Load training data
     
     % TODO: CHANGE PLANT IDENTIFICATION DATA
@@ -25,6 +29,7 @@ d1 = 0:1; % input delay 1
 d2 = 1:2; % input delay 2
 S1 = 5;   % hidden layer size
 narx_net = narxnet(d1,d2,S1);
+nart_net.sampletime = Ts;
 narx_net.divideFcn = '';
 narx_net.inputs{1}.processFcns = {};
 narx_net.inputs{2}.processFcns = {};
@@ -44,6 +49,7 @@ view(narx_net_closed)
 %% Create NARX network - MRAC system
 S2 = 5;
 mrac_net = feedforwardnet([S2 1 S1]);
+mrac_net.sampletime = Ts;
 mrac_net.layerConnect = [0 1 0 1;1 0 0 0;0 1 0 1;0 0 1 0];
 mrac_net.outputs{4}.feedbackMode = 'closed';
 mrac_net.layers{2}.transferFcn = 'purelin';
