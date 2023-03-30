@@ -19,8 +19,10 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
+#include "datetimestr.h"
+
 /* Define --------------------------------------------------------------------*/
-#define IP  "192.168.0.18" // C / Python server [RPi]
+#define IP  "172.27.229.191" // C / Python server [RPi]
 //#define IP 	 "192.168.0.15" // MATLAB server [PC]
 #define PORT	 20000
 #define MAXLINE  1024
@@ -62,7 +64,7 @@ int main(int argc, char* argv[])
 	// Receive from socket
 	int len = sizeof(servaddr);
 	recvfrom(sockfd, (char *)buffer, MAXLINE, 0, (struct sockaddr*)&servaddr, (socklen_t*)&len);
-	printf("Server response: %s\n", buffer);
+	printf("Server response [%s]: %s\n", datetimestr(), buffer);
 
 	close(sockfd);
 	return 0;

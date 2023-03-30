@@ -19,8 +19,10 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
+#include "datetimestr.h"
+
 /* Define --------------------------------------------------------------------*/
-#define IP 		 "192.168.0.18"
+#define IP 		 "172.27.229.191"
 #define PORT	 20000
 #define MAXLINE  1024
 
@@ -69,7 +71,7 @@ int main(int argc, char* argv[])
 		// Receive from socket
 		int len = sizeof(cliaddr);
 		recvfrom(sockfd, (char*)buffer, MAXLINE, 0, (struct sockaddr*)&cliaddr, (socklen_t*)&len);
-		printf("Client message: %s\n", buffer);
+		printf("Client message [%s]: %s\n", datetimestr(), buffer);
 		
 		// Send to socket
 		sendto(sockfd, (const char *)hello, strlen(hello), 0, (const struct sockaddr*)&cliaddr, len);
