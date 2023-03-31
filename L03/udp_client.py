@@ -10,10 +10,11 @@
 #******************************************************************************
 #*
 import socket
+from datetimestr import datetimestr
 
 msgFromClient       = "Hello from [Python] client"
 bytesToSend         = str.encode(msgFromClient)
-serverAddressPort   = ("192.168.0.18", 20000)   # C / Python server [RPi]
+serverAddressPort   = ("172.27.229.191", 20000)   # C / Python server [RPi]
 #serverAddressPort   = ("192.168.0.15", 20000)  # MATLAB server [PC]
 bufferSize          = 1024
 
@@ -26,5 +27,5 @@ print("Message sent.")
 
 msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 
-msg = "Server response: {}".format(msgFromServer[0])
+msg = "Server response [{}]: {}".format(datetimestr(), msgFromServer[0])
 print(msg)

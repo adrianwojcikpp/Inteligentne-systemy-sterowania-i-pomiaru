@@ -10,8 +10,9 @@
 #******************************************************************************
 #*
 import socket
+from datetimestr import datetimestr
 
-localIP    = "192.168.0.18"
+localIP    = "172.27.229.191"
 localPort  = 20000
 bufferSize = 1024
 
@@ -35,7 +36,7 @@ while(True):
 
     address = bytesAddressPair[1]
 
-    clientMsg = "Client message: {}".format(message)
+    clientMsg = "Client message[{}]: {}".format(datetimestr(), message)
     clientIP  = "Client IP Address:{}".format(address)
     
     print(clientMsg)
