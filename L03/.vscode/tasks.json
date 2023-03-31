@@ -8,7 +8,7 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${file}", "datetimestr.c",
+				"${file}", "datetimestr.c", "udp_parse_args.c",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],

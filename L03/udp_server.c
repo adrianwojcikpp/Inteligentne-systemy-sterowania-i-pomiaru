@@ -20,11 +20,12 @@
 #include <netinet/in.h>
 
 #include "datetimestr.h"
+#include "udp_parse_args.h"
 
 /* Define --------------------------------------------------------------------*/
-#define IP 		 "172.27.229.191"
-#define PORT	 20000
-#define MAXLINE  1024
+#define DEFAULT_IP		"172.27.229.191"
+#define DEFAULT_PORT	20000
+#define MAXLINE  		1024
 
 /* Main function -------------------------------------------------------------*/
 
@@ -38,6 +39,9 @@
   */
 int main(int argc, char* argv[])
 {
+	struct argopt opt = { DEFAULT_PORT, DEFAULT_IP };
+	parse_args(argc, argv, &opt);
+
 	int sockfd;
 	char buffer[MAXLINE] = {0,};
 	char hello[] = "Hello from [C] server";
@@ -55,8 +59,8 @@ int main(int argc, char* argv[])
 	
 	// Filling server information
 	servaddr.sin_family = AF_INET; // IPv4
-	servaddr.sin_addr.s_addr = inet_addr(IP);;
-	servaddr.sin_port = htons(PORT);
+	servaddr.sin_port = htons(opt.port);
+	servaddr.sin_addr.s_addr = inet_addr(opt.ip);
 	
 	// Bind the socket with the server address
 	if(bind(sockfd, (const struct sockaddr *)&servaddr, sizeof(servaddr)) < 0 )
