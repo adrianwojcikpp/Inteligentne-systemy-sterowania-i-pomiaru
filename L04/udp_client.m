@@ -13,10 +13,11 @@
 % ************************************************************************
 
 %server_ip = '192.168.1.181'; % MATLAB server [PC]
-server_ip = '192.168.1.224'; % C / Python server [RPi]
+server_ip = '192.168.1.248'; % C / Python server [RPi]
 server_port = 20001;
 
 udp_client_port = udpport("datagram","IPV4");
+%configureCallback(udp_client_port,"datagram", 1, @clientCallback);
 
 udp_send = @(data)( write(udp_client_port, char(num2str(data)), server_ip, server_port) );
 
