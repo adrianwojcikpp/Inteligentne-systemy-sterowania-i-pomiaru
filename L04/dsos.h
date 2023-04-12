@@ -10,6 +10,10 @@
   ******************************************************************************
   */
   
+#ifndef DSOS_H
+#define DSOS_H
+
+  
 /* Typedef -------------------------------------------------------------------*/
 typedef struct {
 	double a1, a2, b0, b1, b2;
@@ -32,3 +36,5 @@ typedef struct {
  * @return System response 
  */
 double DSOS_GetOutput(DSOS_HandleTypeDef* sys, double u);
+
+#endif // DSOS_H

@@ -10,6 +10,9 @@
   ******************************************************************************
   */
 
+#ifndef PID_CONTROLLER_H
+#define PID_CONTROLLER_H
+
 /* Typedef -------------------------------------------------------------------*/
 typedef struct {
   float Kp;        // Proportional gain
@@ -39,3 +42,5 @@ void PID_Init(PID_HandleTypeDef* hpid);
  * @return Controller output signal (control response)
  */
 float PID_GetOutput(PID_HandleTypeDef* hpid, float yref, float y);
+
+#endif // PID_CONTROLLER_H

@@ -10,10 +10,13 @@
   ******************************************************************************
   */
 
+#ifndef PID_CONTROLLER_CONFIG_H
+#define PID_CONTROLLER_CONFIG_H
+
 /* Includes ------------------------------------------------------------------*/
 #include "pid_controller.h"
 
 /* Public variables ----------------------------------------------------------*/
 extern PID_HandleTypeDef pid_ctrl1;
 
-
+#endif // PID_CONTROLLER_CONFIG_H
