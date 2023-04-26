@@ -106,16 +106,17 @@ void* control_loop(void* arg)
 		y = DSOS_GetOutput(&sys, u);
     	delay_ms(SAMPLE_TIME);
 
-		if(iteration % 10 == 0)
+		//if(iteration % 10 == 0)
 		{
 			char response[64];
 			memcpy(&response[0], &y, sizeof(y));
-			memcpy(&response[8], &flag, sizeof(flag));
+			memcpy(&response[8], &u, sizeof(u));
+			memcpy(&response[16], &flag, sizeof(flag));
 
-			printf("Server message: [%02x%02x%02x%02x%02x%02x%02x%02x] %lf\n", response[0], response[1], response[2], response[3], response[4], response[5], response[6], response[7], y);
+			//printf("Server message: [%02x%02x%02x%02x%02x%02x%02x%02x] %lf\n", response[0], response[1], response[2], response[3], response[4], response[5], response[6], response[7], y);
 
 			int len = sizeof(tx_cliaddr);
-			sendto(tx_sockfd, (const char*)response, 2*sizeof(double), 0, (const struct sockaddr*)&tx_cliaddr, len);
+			sendto(tx_sockfd, (const char*)response, 3*sizeof(double), 0, (const struct sockaddr*)&tx_cliaddr, len);
 		}
 
 		iteration++;
@@ -204,9 +205,9 @@ int main(int argc, char* argv[])
 		recvfrom(rx_sockfd, (char*)buffer, MAXLINE, 0, (struct sockaddr*)&rx_cliaddr, (socklen_t*)&len);
 
 		memcpy(&u, buffer, sizeof(u));
-		reverse_bytes((uint64_t*)&u);
+		//reverse_bytes((uint64_t*)&u);
 		
-		printf("Client message: [%02x%02x%02x%02x%02x%02x%02x%02x] %lf\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7], u);
+		//printf("Client message: [%02x%02x%02x%02x%02x%02x%02x%02x] %lf\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7], u);
 
 		memset(buffer, '\0', sizeof(u));	
 	}
