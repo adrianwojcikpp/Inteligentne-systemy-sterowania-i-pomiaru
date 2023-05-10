@@ -23,7 +23,7 @@ s = tf('s'); % complex number frequency parameter
     u = [0; 0.5; ones(length(t)-2,1)];
     
     % Input signal: white noise
-    u = wgn(length(t), 1, 1);
+    %u = wgn(length(t), 1, 1);
     %u = 10*randn(length(t),1);
     
     % Output signal: system response

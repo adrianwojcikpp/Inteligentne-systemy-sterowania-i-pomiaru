@@ -1,0 +1,7 @@
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c:159:19:HAL_FLASHEx_Erase	32	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c:240:19:HAL_FLASHEx_Erase_IT	16	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c:313:19:HAL_FLASHEx_OBErase	24	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c:362:19:HAL_FLASHEx_OBProgram	24	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c:443:6:HAL_FLASHEx_OBGetConfig	0	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c:465:10:HAL_FLASHEx_OBGetUserData	0	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c:960:6:FLASH_PageErase	0	static

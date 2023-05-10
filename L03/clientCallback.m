@@ -3,11 +3,11 @@ function clientCallback(u, ~)
     datagram = read(u, u.NumDatagramsAvailable, "uint8");
             
     % get datagram components
-    data = char(datagram.Data);
+    data = jsondecode(char(datagram.Data));
     
     % Prepare the acknowledgement string.
     time = datestr(now, 'HH:MM:SS.FFF');
-    dataDisp = "Server response [" + time + "]: " + data;
+    dataDisp = "Server response [" + time + "]: " + data.angle;
     
     disp(dataDisp);
 end

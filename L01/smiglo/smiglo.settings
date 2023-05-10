@@ -1,0 +1,6 @@
+#
+#Sun Mar 19 12:56:45 CET 2023
+selected.firmware_ver=1.11.3
+selected.toolchain=ST STM32CubeIDE
+selected.cubemx=6.7.0
+selected.driver=HAL - Hardware Abstraction Layer

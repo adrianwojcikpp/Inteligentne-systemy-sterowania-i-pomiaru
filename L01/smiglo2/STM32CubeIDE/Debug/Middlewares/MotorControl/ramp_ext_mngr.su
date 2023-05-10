@@ -1,0 +1,7 @@
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo2/MCSDK_v5.4.8/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c:44:6:REMNG_Init	8	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo2/MCSDK_v5.4.8/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c:72:16:REMNG_Calc	8	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo2/MCSDK_v5.4.8/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c:199:16:REMNG_GetValue	8	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo2/MCSDK_v5.4.8/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c:218:13:REMNG_RampCompleted	0	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo2/MCSDK_v5.4.8/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c:233:13:REMNG_StopRamp	0	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo2/MCSDK_v5.4.8/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c:246:17:getScalingFactor	0	static
+C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo2/MCSDK_v5.4.8/MotorControl/MCSDK/MCLib/Any/Src/ramp_ext_mngr.c:120:13:REMNG_ExecRamp	32	static
