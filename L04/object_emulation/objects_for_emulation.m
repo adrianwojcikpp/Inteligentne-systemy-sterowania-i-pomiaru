@@ -18,15 +18,14 @@ K2 = 0.5; % [-]
 
 G2 = K2 / ((s^2 / w0^2) + (2*dmp*s / w0) + 1);
 
-H = c2d(G2, Ts, 'tustin');
+H = c2d(G1, Ts, 'tustin');
 
 conv = floatingPointConverter('DOUBLE', 'ROWS');
 
 % Discrete SOS coefficients
-coeffs = conv.print_csv_hex_data(                       ...
-         [ -H.den{1}(2), -H.den{1}(3),                ...
-            H.num{1}(1),  H.num{1}(2), H.num{1}(3) ] ...
-         );
+coeffs = conv.print_csv_hex_data(                    ...
+         [ -H.den{1}(2), -H.den{1}(3),               ...
+            H.num{1}(1),  H.num{1}(2), H.num{1}(3) ] );
 coeffs = coeffs(1:end-1);
 disp("Discrete second-order-system coefficients:")
 disp(coeffs);
@@ -35,6 +34,17 @@ disp(coeffs);
 N = 10000;
 
 y1 = lsim(H, ones(N,1));
+
+src = readlines('object_emulation.c');
+src(35) = "  " + convertCharsToStrings(coeffs);
+%writelines(src, 'object_emulation.c');
+fid = fopen('object_emulation.c','w'); 
+for s = src
+    fprintf(fid, '%s\n', s);
+end
+fclose(fid);%close file
+system('gcc object_emulation.c dsos.c -o object_emulation.exe');
+system('object_emulation.exe');
 y2 = load("y.csv");
 
 t = 0 : Ts : Ts*(N-1);
