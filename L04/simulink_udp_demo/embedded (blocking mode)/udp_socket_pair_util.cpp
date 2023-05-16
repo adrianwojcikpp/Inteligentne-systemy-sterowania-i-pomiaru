@@ -141,8 +141,8 @@ void UDP_SocketPair_Init(struct UDP_SocketPair* sockp, struct argopt* opt)
 
     // Set socket timeout
     struct timeval tv;
-    tv.tv_sec = 0;
-    tv.tv_usec = 5000;
+    tv.tv_sec = 1;
+    tv.tv_usec = 0;
     setsockopt(sockp->rxfd, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof tv);
 }
 
