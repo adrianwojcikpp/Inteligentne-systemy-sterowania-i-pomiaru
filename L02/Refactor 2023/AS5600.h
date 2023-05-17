@@ -41,7 +41,7 @@ typedef enum {
 #define _burn  			0xff
 
 #include <stdint.h>
-AS5600_STATUS AS5600_Init(int *fd);
+AS5600_STATUS AS5600_Init(void);
 AS5600_STATUS AS5600_SetMode(uint8_t mode);
 
 uint16_t setMaxAngle(uint16_t newMaxAngle);

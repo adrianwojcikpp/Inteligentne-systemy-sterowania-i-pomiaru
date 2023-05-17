@@ -13,6 +13,7 @@
 #include <cstdio>
 
 #define NO_DATA INT_MAX
+
 /**
  * @brief Uart connection object
  * 
@@ -20,7 +21,7 @@
 struct UART
 {
     int baud;
-    char *device;
+    const char *device;
 };
 /**
  * @brief Uart frame obejct
@@ -115,6 +116,9 @@ struct Frame
         return newb;
     }
 };
+
+extern Frame f;
+
 /**
  * @brief Receive uart frame
  * 
@@ -122,7 +126,7 @@ struct Frame
  * @param connection Uart connection id
  * @return UART_STATUS Receiving status
  */
-UART_STATUS receive(Frame *cmd,int connection);
+UART_STATUS receive(Frame *cmd, int connection);
 /**
  * @brief Send data in frame
  * 
@@ -132,15 +136,13 @@ UART_STATUS receive(Frame *cmd,int connection);
  * @param cmd_show Optional param, if true show sending fame in console
  * @return UART_STATUS Sending resoult
  */
-UART_STATUS send(Frame cmd, UART uart,Frame* f, bool cmd_show=true);
+UART_STATUS send(Frame cmd, UART uart, bool cmd_show=true);
 /**
  * @brief Execute start motor command
  * 
- * @param motorId Motor id
- * @param uart Uart object
  * @return UART_STATUS Starting motor resoult
  */
-UART_STATUS StartMotor(int motorId, UART uart,Frame* f);
+UART_STATUS StartMotor(void);
 /**
  * @brief Execute stop motor command
  * 
@@ -148,36 +150,32 @@ UART_STATUS StartMotor(int motorId, UART uart,Frame* f);
  * @param uart Uart object
  * @return UART_STATUS  Stoping motor resoult
  */
-UART_STATUS StopMotor(int motorId, UART uart,Frame* f);
+UART_STATUS StopMotor(void);
 /**
  * @brief Set the motor ramp final speed registry
  * 
  * @param ref Value to set
- * @param motorId Motor id
- * @param uart Uart object
  * @return UART_STATUS Setting resoult 
  */
-UART_STATUS SetMotorRefSpeed(int ref, int motorId, UART uart,Frame* f);
+UART_STATUS SetMotorRefSpeed(int ref);
 /**
  * @brief Set the registry value
  * 
  * @param reg Motor control register id
  * @param regL Montrol register payload length
- * @param motorId Motor id
- * @param uart Uart object
  * @param data Value to set
  * @return UART_STATUS Setting resoult
  */
-UART_STATUS SetRegistry(STEVAL_REGISTERS reg, STEVAL_REGISTERS_LEN regL, int motorId, UART uart, int data,Frame* f);
+UART_STATUS SetRegistry(STEVAL_REGISTERS reg, STEVAL_REGISTERS_LEN regL, int data);
 /**
  * @brief Get the registry value
  * 
  * @param reg Motor control register id
  * @param regL Montrol register payload length
- * @param motorId Motor id
- * @param uart Uart object
  * @return UART_STATUS Getting resoult
  */
-UART_STATUS GetRegistry(STEVAL_REGISTERS reg, STEVAL_REGISTERS_LEN regL, int motorId, UART uart,Frame* f);
+UART_STATUS GetRegistry(STEVAL_REGISTERS reg, STEVAL_REGISTERS_LEN regL);
+
+UART_STATUS FaultAck(void);
 
 #endif /* INC_UARTSTEVAL_H_ */

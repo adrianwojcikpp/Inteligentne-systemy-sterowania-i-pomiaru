@@ -1,3 +1,5 @@
+// TODO: Refactor with proper Doxygen
+
 #include "AS5600.h"
 #include <wiringPiI2C.h>
 #include <stdio.h>
@@ -67,13 +69,13 @@ AS5600_STATUS writeTwoByte(uint16_t in_adr, uint16_t dat_in) {
 }
 /*******************************************************
 * Initialize AS5600
-* @param[out] fd
 * @return AS5600 status
 *******************************************************/
-AS5600_STATUS AS5600_Init(int *fd) {
-	*fd,as5600 = wiringPiI2CSetup(AS5600_ADDRESS);
-    //as5600= *fd;
+AS5600_STATUS AS5600_Init(void) {
+	as5600 = wiringPiI2CSetup(AS5600_ADDRESS);
+  if(as5600< 0)
     return AS5600_OK;
+  return AS5600_ERROR;
 }
 /*******************************************************
 * Set mode of AS5600
