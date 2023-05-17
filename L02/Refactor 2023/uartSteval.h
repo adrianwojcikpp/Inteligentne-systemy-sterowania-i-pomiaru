@@ -58,11 +58,11 @@ struct Frame
             for (int i = 0; i < payload; i++)
             {
                 CRC += (data >> i * 8) & 0xFF;
-                printf("cRc: %d \n", (data >> i * 8) & 0xFF);
+
             }
         }
         CRC=((CRC>>8) & 0xff)+(CRC & 0xff);
-        printf("crc: %d \n", CRC);
+		
     }
     Frame(int* array,int lenght)
     {
@@ -136,7 +136,7 @@ UART_STATUS receive(Frame *cmd, int connection);
  * @param cmd_show Optional param, if true show sending fame in console
  * @return UART_STATUS Sending resoult
  */
-UART_STATUS send(Frame cmd, UART uart, bool cmd_show=true);
+UART_STATUS send(Frame cmd, UART uart, bool cmd_show=false);
 /**
  * @brief Execute start motor command
  * 

@@ -37,7 +37,7 @@ UART_STATUS receive(Frame *cmd, int connection)
 
     return UART_OK;
 }
-UART_STATUS sendData(int con, int data, int l, bool cmd_show=true)
+UART_STATUS sendData(int con, int data, int l, bool cmd_show=false)
 {
     for(int i = 0;i<l;i++){
       serialPutchar(con,(data >> i*8) & 0xFF);
