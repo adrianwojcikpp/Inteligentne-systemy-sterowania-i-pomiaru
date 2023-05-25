@@ -1,4 +1,5 @@
-
-L04/object_emulation/object_emulation.exe
 *.exe
-*.exe
+*.slxc
+*.asv
+*.slx.r2017b
+slprj/

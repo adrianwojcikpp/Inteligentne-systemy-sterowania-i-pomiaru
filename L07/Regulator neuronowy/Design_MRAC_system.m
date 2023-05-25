@@ -17,7 +17,7 @@ clear all; close all; clc;
 
 %% System sample time
 
-Ts = 1; % [s]
+Ts = 0.05; % [s]
 
 %% Load training data
     
