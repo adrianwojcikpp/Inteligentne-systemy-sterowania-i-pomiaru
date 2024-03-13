@@ -49,7 +49,7 @@ AS5600_STATUS readTwoBytes(uint16_t *Resoult, uint16_t in_adr) {
 *******************************************************/
 AS5600_STATUS writeOneByte(uint8_t in_adr, uint8_t dat_in) {
     int response = wiringPiI2CWriteReg8(as5600,in_adr,dat_in);
-	if (response !=-1) {
+	if (response != -1) {
 		return AS5600_OK;
 	}
 	return AS5600_ERROR;
@@ -62,7 +62,7 @@ AS5600_STATUS writeOneByte(uint8_t in_adr, uint8_t dat_in) {
 *******************************************************/
 AS5600_STATUS writeTwoByte(uint16_t in_adr, uint16_t dat_in) {
     int response = wiringPiI2CWriteReg16(as5600,in_adr,dat_in);
-	if (response !=-1) {
+	if (response != -1) {
 		return AS5600_OK;
 	}
 	return AS5600_ERROR;
@@ -73,7 +73,7 @@ AS5600_STATUS writeTwoByte(uint16_t in_adr, uint16_t dat_in) {
 *******************************************************/
 AS5600_STATUS AS5600_Init(void) {
 	as5600 = wiringPiI2CSetup(AS5600_ADDRESS);
-  if(as5600< 0)
+  if(as5600 >= 0)
     return AS5600_OK;
   return AS5600_ERROR;
 }
