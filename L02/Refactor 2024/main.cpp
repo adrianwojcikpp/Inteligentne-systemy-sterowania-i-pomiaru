@@ -1,32 +1,49 @@
+/**
+  ******************************************************************************
+  * @file    main.cpp
+  * @author  Jakub Walkowski
+  * @version 3.0.0
+  * @date    19-Mar-2024
+  * @brief   Aeropendulu control (APC) command line app example
+  *
+  ******************************************************************************
+  */
+
 #include <iostream>
 
-#include "AS5600.h"
-#include "uartSteval.h"
+#include "motor_steval.h"
+#include "encoder_as5600.h"
 
 int main(int argc, char** argv)
 {
-    UART steval;
-    steval.baud = 38400;
-    steval.device = "/dev/ttyACM0";
+    // Motor control initialization
+    MOTOR_Init();
 
-    Frame f;
+    // Position measurement initialization
+    ENCODER_Init();
 
-    AS5600_Init();
-
-    FaultAck(0, steval, &f);
+    // Starting motor
+    MOTOR_FaultAck();
     int speed = std::stoi(argv[1]);
-    if(abs(speed) <= 4000)
+    if(abs(speed) <= 3000)
     {
-        SetMotorRefSpeed(speed, 0, steval, &f);
-        printf("Reference speed [rpm]: %d\n", speed);
+        MOTOR_SetRefSpeed(speed);
+        std::cout << "Reference speed [rpm]: " <<  speed << std::endl;
     }
-    StartMotor(0, steval, &f);
+    MOTOR_Start();
 
-    float position = convertRawAngleToDegrees(getRawAngle());
-    printf("Position [deg]: %f\n", position);
+    // Reading motor speed
+    int payload;
+    MOTOR_GetMeasSpeed(&payload, &speed);
+    std::cout << "Measured speed [rpm]: (" << payload << ") " << speed << std::endl;
+    
+    // Reading position
+    uint16_t positon_raw = ENCODER_getRawAngle();
+    float position = ENCODER_convertRawAngleToDegrees(positon_raw);
+    std::cout << "Position [deg]: " << position << std::endl;
 
-    GetRegistry(STEVAL_REGISTERS::SPEED_MEAS, STEVAL_REGISTERS_LEN::GET, 0, steval, &f);
-    printf("Measured speed [rpm]: (%d) %d\n", f.payload, f.data);
+    // Motor control deinitialization
+    MOTOR_DeInit();
 
     return 0;
 }

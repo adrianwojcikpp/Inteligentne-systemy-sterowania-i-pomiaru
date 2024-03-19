@@ -1,8 +1,0 @@
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:73:6:DMA1_Channel1_IRQHandler	8	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:96:6:TIM1_BRK_UP_TRG_COM_IRQHandler	8	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:133:6:DMA1_Channel4_5_IRQHandler	0	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:156:6:TIM2_IRQHandler	8	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:199:6:USART1_IRQHandler	16	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:249:6:HardFault_Handler	24	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:297:6:SysTick_Handler	8	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/Src/stm32f0xx_mc_it.c:324:6:EXTI0_1_IRQHandler	8	static

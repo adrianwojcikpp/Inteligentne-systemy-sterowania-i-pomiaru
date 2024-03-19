@@ -1,8 +1,0 @@
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:64:13:UFCP_Init	8	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:151:13:UFCP_TX_IRQ_Handler	8	static,ignoring_inline_asm
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:224:16:UFCP_Receive	0	static,ignoring_inline_asm
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:246:16:UFCP_Send	24	static,ignoring_inline_asm
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:74:15:UFCP_RX_IRQ_Handler	32	static,ignoring_inline_asm
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:201:13:UFCP_OVR_IRQ_Handler	16	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:214:13:UFCP_TIMEOUT_IRQ_Handler	16	static
-C:/PP/Dydaktyka/MATERIALY/ISPiS_MATERIALY/ISPiS_PRZYKLADY/L01/smiglo/MCSDK_v5.4.8/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c:274:13:UFCP_AbortReceive	0	static
