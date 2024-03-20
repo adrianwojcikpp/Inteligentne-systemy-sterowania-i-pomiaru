@@ -26,7 +26,7 @@ int main(int argc, char** argv)
     int payload;
     ERROR_CODES error; 
     MOTOR_GetErrorStatus(&payload, &error);
-    std::cout << "Error status: (" << payload << ")" << error << std::endl;
+    std::cout << "Error status: (" << payload << ") " << error << std::endl;
 
     // Starting motor
     MOTOR_FaultAck();
