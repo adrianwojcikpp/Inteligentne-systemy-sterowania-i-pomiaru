@@ -67,6 +67,50 @@ char const* GetErrorMessage(STEVAL_ERROR errorCode)
     }
 } 
 
+std::ostream& operator<<(std::ostream& out, const ERROR_CODES value)
+{
+    std::string errorMessge;
+    switch(value)
+    {
+        case  ERROR_CODES::MC_FOC_DURATION:
+            errorMessge = "MC_FOC_DURATION";
+        break;
+
+        case  ERROR_CODES::MC_OVER_VOLT:
+            errorMessge = "MC_OVER_VOLT";
+        break;    
+
+        case  ERROR_CODES::MC_UNDER_VOLT:
+            errorMessge = "MC_UNDER_VOLT";
+        break;    
+
+        case  ERROR_CODES::MC_OVER_TEMP:
+            errorMessge = "MC_OVER_TEMP";
+        break;    
+
+        case  ERROR_CODES::MC_START_UP:
+            errorMessge = "MC_START_UP";
+        break;    
+
+        case  ERROR_CODES::MC_SPEED_FDBK:
+            errorMessge = "MC_SPEED_FDBK";
+        break;    
+
+        case  ERROR_CODES::MC_BREAK_IN:
+            errorMessge = "MC_BREAK_IN";
+        break;  
+
+        case  ERROR_CODES::MC_SW_ERROR:
+            errorMessge = "MC_SW_ERROR";
+        break;  
+
+        default:
+            errorMessge = "MC_NO_ERROR";
+        break;
+    }
+    return out << errorMessge;
+}
+
 /**
  * @brief TODO
  * 
@@ -341,5 +385,21 @@ UART_STATUS MOTOR_GetMeasSpeed(int* payload, int* speed)
     UART_STATUS status = MOTOR_GetRegistry(STEVAL_REGISTERS::SPEED_MEAS, STEVAL_REGISTERS_LEN::GET, &rec);
     *payload = rec.payload;
     *speed = rec.data;
+    return status;
+}
+
+/**
+ * @brief TODO
+ *  
+ * @param[out] payload : Number of received bytes (expeted ?)
+ * @param[out] error : TODO
+ * @return UART_STATUS Getting result
+ */
+UART_STATUS MOTOR_GetErrorStatus(int* payload, ERROR_CODES* error)
+{
+    Frame rec;
+    UART_STATUS status = MOTOR_GetRegistry(STEVAL_REGISTERS::FLAGS, STEVAL_REGISTERS_LEN::GET, &rec);
+    *payload = rec.payload;
+    *error = (ERROR_CODES)rec.data;
     return status;
 }

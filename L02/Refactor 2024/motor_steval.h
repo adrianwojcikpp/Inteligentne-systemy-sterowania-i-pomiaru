@@ -146,6 +146,9 @@ struct Frame
 };
 
 /* Public function prototypes ------------------------------------------------*/
+
+std::ostream& operator<<(std::ostream& out, const ERROR_CODES value);
+
 /**
  * @brief Set the registry value
  * 
@@ -232,5 +235,14 @@ UART_STATUS MOTOR_StopRamp(void);
  * @return UART_STATUS Getting result
  */
 UART_STATUS MOTOR_GetMeasSpeed(int* payload, int* speed);
+
+/**
+ * @brief TODO
+ *  
+ * @param[out] payload : Number of received bytes (expeted ?)
+ * @param[out] error : TODO
+ * @return UART_STATUS Getting result
+ */
+UART_STATUS MOTOR_GetErrorStatus(int* payload, ERROR_CODES* error);
 
 #endif /* INC_MOTOR_STEVAL_H_ */

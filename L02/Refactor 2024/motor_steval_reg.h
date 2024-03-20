@@ -185,4 +185,20 @@ enum class FRAME_CODES
     ERROR       = 0xFF /**< Frame with error, error code store in data. */
 };
 
+/** @name Fault source error codes */
+/** @{ */
+enum class ERROR_CODES
+{
+    MC_NO_ERROR = 0x0000u,     /**< @brief No error.*/
+    MC_FOC_DURATION = 0x0001u, /**< @brief Error: FOC rate to high.*/
+    MC_OVER_VOLT = 0x0002u,    /**< @brief Error: Software over voltage.*/
+    MC_UNDER_VOLT = 0x0004u,   /**< @brief Error: Software under voltage.*/
+    MC_OVER_TEMP = 0x0008u,    /**< @brief Error: Software over temperature.*/
+    MC_START_UP = 0x0010u,     /**< @brief Error: Startup failed.*/
+    MC_SPEED_FDBK = 0x0020u,   /**< @brief Error: Speed feedback.*/
+    MC_BREAK_IN = 0x0040u,     /**< @brief Error: Emergency input (Over current).*/
+    MC_SW_ERROR = 0x0080u      /**< @brief Software Error.*/
+};
+/** @} */
+
 #endif /* INC_MOTOR_STEVAL_REG_H_ */

@@ -22,6 +22,12 @@ int main(int argc, char** argv)
     // Position measurement initialization
     ENCODER_Init();
 
+    // Read error status
+    int payload;
+    ERROR_CODES error; 
+    MOTOR_GetErrorStatus(&payload, &error);
+    std::cout << "Error status: (" << payload << ")" << error << std::endl;
+
     // Starting motor
     MOTOR_FaultAck();
     int speed = std::stoi(argv[1]);
@@ -33,7 +39,6 @@ int main(int argc, char** argv)
     MOTOR_Start();
 
     // Reading motor speed
-    int payload;
     MOTOR_GetMeasSpeed(&payload, &speed);
     std::cout << "Measured speed [rpm]: (" << payload << ") " << speed << std::endl;
     

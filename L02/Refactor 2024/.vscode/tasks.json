@@ -11,7 +11,7 @@
 				"${file}", "encoder_as5600.cpp", "motor_steval.cpp",
 				"-o",
 				"apc",
-				"-lwiringPi"
+				"-lwiringPi", "-std=c++2a"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
