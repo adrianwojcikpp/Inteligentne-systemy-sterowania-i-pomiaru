@@ -18,6 +18,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
+#include <ncurses.h>
 
 #include "datetimestr.h"
 #include "udp_parse_args.h"
@@ -68,18 +69,21 @@ int main(int argc, char* argv[])
 		perror("bind failed");
 		exit(EXIT_FAILURE);
 	}
-	
+
 	printf("[C] UDP server up and listening.\n");
 	while(1)
 	{
 		// Receive from socket
 		int len = sizeof(cliaddr);
 		recvfrom(sockfd, (char*)buffer, MAXLINE, 0, (struct sockaddr*)&cliaddr, (socklen_t*)&len);
-		printf("Client message [%s]: %s\n", datetimestr(), buffer);
-		
+		printf("Client message [%s]: %s\r\n", datetimestr(), buffer+1);
+
+		if(buffer[0] == 'q')
+			break;
+			
 		// Send to socket
 		sendto(sockfd, (const char *)hello, strlen(hello), 0, (const struct sockaddr*)&cliaddr, len);
-		printf("Response sent.\n");
+		printf("Response sent.\r\n");
 	}
 	
 	return 0;

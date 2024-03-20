@@ -20,6 +20,6 @@ server_port = 20000;
 udp_client_port = udpport("datagram","IPV4");
 configureCallback(udp_client_port,"datagram", 1, @clientCallback);
 
-udp_send = @(data)( write(udp_client_port, char(jsonencode(data)), server_ip, server_port) );
+udp_send = @(data)( write(udp_client_port, data, server_ip, server_port) );
 
 udp_send(1);
