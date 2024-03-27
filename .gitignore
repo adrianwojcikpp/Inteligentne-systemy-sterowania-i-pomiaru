@@ -4,3 +4,6 @@
 *.slx.r2017b
 slprj/
 L01/DF45L024048-A2/STM32CubeIDE/Debug/
+L02/Aeropendulum Control Example DONE
+L03/matlab/send_cli_command.m
+L03/python/__pycache__
