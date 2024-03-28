@@ -3,8 +3,8 @@
 #******************************************************************************
 #* @file    datetimestr.py
 #* @author  AW           Adrian.Wojcik@put.poznan.pl
-#* @version 1.0
-#* @date    30-Mar-2023
+#* @version 2.0
+#* @date    28-Mar-2024
 #* @brief   Returns a string with the current date and time, up to milliseconds precision.
 #* 
 #******************************************************************************

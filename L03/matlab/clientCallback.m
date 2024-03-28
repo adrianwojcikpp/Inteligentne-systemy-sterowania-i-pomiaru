@@ -4,7 +4,6 @@ function clientCallback(u, ~)
             
     % get datagram components
     if ~isempty(datagram)
-         %data = jsondecode(char(datagram.Data));
         data = char(datagram.Data);
     
         % Prepare the acknowledgement string.

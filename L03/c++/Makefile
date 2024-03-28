@@ -1,10 +1,10 @@
 default: client
 
-client: udp_client.c 
-	gcc udp_client.c -o udp_client --std=c18 -Wall -pedantic 
+client: udp_client.cpp udp_parse_args.cpp datetimestr.cpp
+	g++ udp_client.cpp udp_parse_args.cpp datetimestr.cpp -o udp_client -Wall -pedantic 
 
-server: udp_server.c 
-	gcc udp_server.c -o udp_server --std=c18 -Wall -pedantic 
+server: udp_server.cpp udp_parse_args.cpp datetimestr.cpp
+	g++ udp_server.cpp udp_parse_args.cpp datetimestr.cpp -o udp_server -Wall -pedantic 
 
 clean:
 	rm -f udp_client

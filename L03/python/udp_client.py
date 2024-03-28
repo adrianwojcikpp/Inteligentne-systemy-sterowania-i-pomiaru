@@ -21,10 +21,10 @@ if __name__ == '__main__':
     if port is None:
         port = 20000
     if ip is None:
-        ip = "172.27.229.191" # C / Python server [RPi]
-        #ip = "192.168.0.15" # MATLAB server [PC]
+        ip = "172.27.229.191" # C++ / Python server [RPi]
+        #ip = "192.168.2.100" # MATLAB / Python server [PC]
 
-    msgFromClient       = "Hello from [Python] client"
+    msgFromClient       = "-a -b -c 100"
     bytesToSend         = str.encode(msgFromClient)
     serverAddressPort   = (ip, port)   # C / Python server [RPi]
     bufferSize          = 1024

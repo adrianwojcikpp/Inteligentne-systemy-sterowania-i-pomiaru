@@ -12,7 +12,7 @@
 %
 % ************************************************************************
 
-server_ip = '172.27.224.1'; % MATLAB server [PC]
+server_ip = '172.27.224.1'; % MATLAB / Python server [PC]
 server_port = 20000;
 
 udp_server_port = udpport("datagram","IPV4", ...
@@ -22,3 +22,4 @@ udp_server_port = udpport("datagram","IPV4", ...
 configureCallback(udp_server_port,"datagram", 1, @serverCallback);
 
 disp("[MATLAB] UDP server up and listening.")
+

@@ -3,12 +3,12 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc-11 build active file",
-			"command": "/usr/bin/gcc-11",
+			"label": "C/C++: g++-11 build active file",
+			"command": "/usr/bin/g++-11",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${file}", "datetimestr.c", "udp_parse_args.c",
+				"${file}", "datetimestr.cpp", "udp_parse_args.cpp",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],
@@ -19,7 +19,7 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compiler: /usr/bin/gcc-11"
+			"detail": "compiler: /usr/bin/g++-11"
 		}
 	]
 }

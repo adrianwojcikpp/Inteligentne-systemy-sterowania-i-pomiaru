@@ -4,12 +4,14 @@ function serverCallback(u, ~)
             
     % get datagram components
     data = char(datagram.Data);
+    assignin('base', 'response', jsondecode(data));
     senderAdress = datagram.SenderAddress;
     senderPort = datagram.SenderPort;
     
-    % Prepare the acknowledgement string.
-    dataDisp = "Client message: " + data;
-    
+    time = datestr(now, 'HH:MM:SS.FFF');
+    dataDisp = "Client message: [" + time + "]: " + data;
     disp(dataDisp);
-    write(u, uint8('Hello from [MATLAB] server'), senderAdress, senderPort);
+
+    % Send the acknowledgement string.
+    write(u, uint8('ACK from [MATLAB] server'), senderAdress, senderPort);
 end
