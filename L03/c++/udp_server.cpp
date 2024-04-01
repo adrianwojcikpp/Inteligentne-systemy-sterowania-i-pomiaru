@@ -57,23 +57,24 @@ struct options
 
 /**
   * @brief Converts text into space-separated tokens and counts them. 
-  * @param[in]  str     : input text
-  * @param[out] tok_cnt : number of tokes: space-separated words
-  * @param[out] tok_vec : vector of tokes (array of C-strings), min. 32 elements
+  * @param[in]  str         : input text
+  * @param[out] tok_cnt     : number of tokes: space-separated words
+  * @param[out] tok_vec     : vector of tokes (array of C-strings)
+  * @param[in]  tok_cnt_max : max. number of tokens
   * @retval 0 
   */
-void cstr_to_tok(char* str, int* tok_cnt, char** tok_vec)
+void cstr_to_tok(char* str, int* tok_cnt, char** tok_vec, const int tok_cnt_max)
 {
   *tok_cnt = 1; 
   const char* filename = "./apc";
   tok_vec[0] = (char*)std::malloc(std::strlen(filename)+1); 
   std::strcpy(tok_vec[0], filename);
 
-  //*arg_cnt = 0; 
+  //*tok_cnt = 0; 
 
   char* token = std::strtok(str, " "); 
 
-  while(token != NULL && *tok_cnt < 32) {
+  while(token != NULL && *tok_cnt < tok_cnt_max) {
     tok_vec[*tok_cnt] = (char*)std::malloc(std::strlen(token)+1); 
     std::strcpy(tok_vec[*tok_cnt], token);                     
     (*tok_cnt)++;                                          
@@ -89,12 +90,15 @@ void cstr_to_tok(char* str, int* tok_cnt, char** tok_vec)
   */
 void abc_parse_args(char* command, options* op)
 {	
+  const int argc_max = 32;
   int argc;
-  char* argv[32]; 
-  cstr_to_tok(command, &argc, argv);
+  char* argv[argc_max]; 
+
+  //! Allocates memory for local argv 
+  cstr_to_tok(command, &argc, argv, argc_max); 
 
   int arg;
-  optind=1;
+  optind = 0;
   while((arg = getopt(argc, argv, "abc:h")) != -1)
   {
     switch(arg)
@@ -125,6 +129,9 @@ void abc_parse_args(char* command, options* op)
         break;
     }
   }
+
+  for(int i = 0; i < argc; ++i)
+    std::free(argv[i]);
 }
 
 /* Main function -------------------------------------------------------------*/
