@@ -10,6 +10,9 @@ s = tf('s'); % complex number frequency parameter
     
     % Transfer function
     G = K / (s*T + 1); % [-]
+
+    K_org = K;
+    T_org = T;
     
 %% System step response
 
@@ -57,3 +60,9 @@ s = tf('s'); % complex number frequency parameter
     a1_ident = p_ident(1);
     b0_ident = p_ident(2);
     b1_ident = p_ident(3);
+
+    H_ident = tf([b0_ident b1_ident], [1 -a1_ident], ts);
+
+    G_ident = d2c(H_ident, 'tustin');
+    K_ident = G_ident.num{1}(end) / G_ident.den{1}(end);
+    T_ident = G_ident.den{1}(1) / G_ident.den{1}(end);
