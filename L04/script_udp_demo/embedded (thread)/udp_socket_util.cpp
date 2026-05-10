@@ -109,7 +109,8 @@ void UDP_Socket_ReceiveFloatArray(struct UDP_Socket* sock, float* array, unsigne
 {
 	char buffer[1024] = { 0, };
 	int len = sizeof(sock->remote_address);
-	recvfrom(sock->fd, (char*)buffer, sizeof(buffer), 0, (struct sockaddr*)&(sock->remote_address), (socklen_t*)&len);
+	if(recvfrom(sock->fd, (char*)buffer, sizeof(buffer), 0, (struct sockaddr*)&(sock->remote_address), (socklen_t*)&len) == -1)
+		return;
 
     csv_to_float : 
     {

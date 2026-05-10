@@ -23,9 +23,51 @@
 #define DEFAULT_IP  "172.27.229.191"
 #define DEFAULT_PORT 20000
 
+/* Private variables ---------------------------------------------------------*/
+float u = 0.0f; // Input signal
+float y = 0.0f; // Output signal 
+const unsigned int SAMPLE_TIME = 50; // ms
+struct UDP_Socket sock;
+
+DSOS_HandleTypeDef sys; // Dynamic system emulation
+
+/* Control loop  -------------------------------------------------------------*/
+/**
+  * @brief The application control loop - thread with fixed delay time.
+  *  
+  * @param[inout] arg : input arguments.
+  */
+void* control_loop(void* arg)
+{
+	uint64_t iteration = 0;
+	while(1)
+	{
+        // Read system response 
+		y = DSOS_GetOutput(&sys, u);
+
+		if(iteration % 10 == 0) 
+        {
+
+            // Send system response 
+            float txData[] = { timestamp_us(), u, y };
+            UDP_Socket_SendFloatArray(&sock, txData, sizeof(txData)/sizeof(float));
+
+            std::cout << "t = " <<  std::setw(12) << std::right << (int)txData[0] << " us, ";
+            std::cout << "u = " << u << ", y = " << y << std::endl;
+
+        }
+
+        // Wait SAMPLE_TIME milliseconds 
+    	delay_ms(SAMPLE_TIME);
+
+		iteration++;
+	}
+}
+
 /* Main function -------------------------------------------------------------*/
 /**
   * @brief The application entry point.
+  * 
   * @param[in] argc : argument count; number of command-line arguments passed 
   *                   by the user including the name of the program.
   * @param[in] argv : argument vector; character pointers (C-strings) listing 
@@ -35,7 +77,6 @@
 int main(int argc, char* argv[])
 {
     // Initialize dynamic system emulation
-    DSOS_HandleTypeDef sys; 
 	uint64_t coeffs[] = {
         // MATLAB GENERATED VALUES	
 		0x3FFFE62F08D2DDB4,   
@@ -51,39 +92,17 @@ int main(int argc, char* argv[])
 	UDP_Socket_ParseArgs(argc, argv, &opt);
 
     // Create and bind UDP socket 
-    struct UDP_Socket sock;
     UDP_Socket_Init(&sock, &opt);
 
-    /* Main loop */
-	uint64_t iteration = 0;
-    float u = 0.0f; // Input signal
-    float y = 0.0f; // Output signal 
-    const unsigned int SAMPLE_TIME = 50; // ms
+    // Create a new thread
+	pthread_t ptid;
+	pthread_create(&ptid, nullptr, &control_loop, nullptr);
 
-	while(1)
-	{
+    /* Main loop */
+    while(1)
+    {
         // Receive control signal
         UDP_Socket_ReceiveFloatArray(&sock, &u, 1);
-
-        // Read system response 
-		y = DSOS_GetOutput(&sys, u);
-
-		//if(iteration % 10 == 0) 
-        {
-
-            // Send system response 
-            float txData[] = { timestamp_us(), u, y };
-            UDP_Socket_SendFloatArray(&sock, txData, sizeof(txData)/sizeof(float));
-
-            //std::cout << "t = " <<  std::setw(12) << std::right << (int)txData[0] << " us, ";
-            //std::cout << "u = " << u << ", y = " << y << std::endl;
-
-        }
-
-        // Wait SAMPLE_TIME milliseconds 
-    	delay_ms(SAMPLE_TIME);
-
-		iteration++;
     }
 
     return 0;

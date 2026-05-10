@@ -29,8 +29,8 @@ subplot(2,1,2);
 u_vec = [ones(2500,1); -ones(2500,1); zeros(1000,1)];
 
 %% UDP client setup
-%remote_ip = '192.168.1.248';  % C / Python server [RPi]
-remote_ip = '172.27.229.191'; % C / Python server [WSL]
+remote_ip = '192.168.137.118';  % C / Python server [RPi]
+%remote_ip = '172.27.229.191'; % C / Python server [WSL]
 remote_port = 20000;
 
 local_port = udpport("datagram","IPV4");
@@ -52,7 +52,9 @@ while 1
         % get datagram 
         datagram = udp_receive();
         data = datagram.Data;
-                
+        
+
+
         % read application data
         app_data = str2double(strsplit(data, ',')); % text -> double
 

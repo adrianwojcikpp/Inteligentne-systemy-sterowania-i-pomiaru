@@ -11,9 +11,9 @@ function clientCallback(u, ~)
     y = app_data(3);
         
     % print application data on console
-    time = datestr(now, 'HH:MM:SS.FFF');
-    dataDisp = "[" + time + "] t = " + num2str(t,"%.2f") + " s, u = " + ...
-        num2str(u,4) + ", y = " + num2str(y,4);        
+    %time = datestr(now, 'HH:MM:SS.FFF');
+    %dataDisp = "[" + time + "] t = " + num2str(t,"%.2f") + " s, u = " + ...
+    %    num2str(u,4) + ", y = " + num2str(y,4);        
     
-    disp(dataDisp);
+    %disp(dataDisp);
 end
